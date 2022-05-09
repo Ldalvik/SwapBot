@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Swap Bot (0.0.2) | Root</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+    <div id="header">
+      <div class="wrapper">
+        <a href="https://github.com/Ldalvik/SwapBot" class="btn" disabled>Bot Source Code (Soon)</a>
+        <ul class="nav">
+            <li class="downloads"><a href="https://discord.gg/wZGx5NuXBC" class="btn">Discord Channel</a></li>
+            <li class="downloads"><a href="https://discordapp.com/users/Root.#6923/" class="btn">Contact Me</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <section>
+        <div class="title">
+          <h1>Welcome to Swap Bot (0.0.2)</h1>
+          <h5>Made for swapping rims on locked tune files for Forza Horizon 5, but also contains a
+              handful of game commands and more from an old Kik bot. This will be familiar to some as PiBot.</h5>
+          <hr>
+          <span class="credits left">Website last updated 5/9/2022 8:00PM</span>
+          <span class="credits right">Bot last updated 5/9/2022 7:05PM (v0.0.2)</span>
+        </div>
+
+        <h1>How to use</h1>
+        <p>This bot was made for rim swapping locked tune files, but has a few other fun commands and more being worked on daily.
+            The tutorial below is also available with the /swap:help command.
+            <br><br>To start replacing those dirty rims, you need to find the directory your tunes are saved in.</p>
+
+          <h2>Finding your tune file</h2>
+          <h5>If you play on the Xbox (Microsoft) version</h5>
+          <h6 style="font-size: 13px">Location: C:/Users/[USER]/AppData/Local/Packages/Microsoft.624F8B84B80_8wekyb3d8bbwe/SystemAppData/wgs/[XUID]/
+          </h6>
+          <p>(You may have 3+ folders (ignore the <code>t</code> folder) in your <code>wgs</code> directory if you have multiple
+              accounts signed in.) If you don't know which XUID is yours, it should be the most recently modified
+              folder (after you download a tune). Once you are in this folder, you should see a bunch of hashed folder names
+              and a container file. Open up the most recently created/modified folder in here as well. You should see a few 1kb
+              files and another container file. Hover over each file, and find the one that is 378 bytes.
+              This is the file you want to attach to the !swap command.
+          </p>
+
+          <h5>If you play on the Steam version</h5>
+          <h6 style="font-size: 13px">Location: C:/Program Files (x86)/Steam/userdata/[STEAMID]/155136/remote/[XUID]/</h6>
+          <p>Steam is a lot simpler. Download your tune and open up the most recently modified directory in the
+              <code>remote</code> folder. You should see names along the lines of <code>Tuning_####[date]####.Data</code>
+              as well as ones with <code>.header</code> and thumbnails. You want the one that ends in <code>.Data</code>.
+              Make sure it's the tune you downloaded by setting it to recently created/modified.
+          </p>
+
+          <h2>How to find the RIM ID</h2>
+          <p>To find the RIM ID of the rim you want to apply, go to
+              <a href="https://github.com/Ldalvik/SwapBot/blob/main/RIM_IDS.txt">RIM IDS</a> and ctrl+f to search for
+              your rim. The exact name won't be there so try searching parts of it, or just scroll through it as it's ordered
+              by manufacturer.
+              <br>
+              When using the <code>/swap</code> command, you only need the <code>RIM_ID</code> portion of the text. For example,
+              the list gives me WOR_XD9 (XD9), I would only need to type <code>/swap WOR_XD9</code>
+          </p>
+
+          <h5>How to send the tune file</h5>
+          <p>To send the tune file to the bot, attach it the <code>/swap [RIM_ID]</code> command you built using the
+          above steps. After sending the message, the bot will reply with a message displaying info
+              like the car name, original rims, and new rims, and the updated tune file that you will replace the
+          old one with.</p>
+          <br><br>
+
+          <div class="title">
+              <h1>All commands</h1>
+              <h5>All available commands, as well as future commands, WIP commands, and behind the scenes features. If you would
+              like to suggest a feature or minigame, feel free to DM me and I'll be glad to add it.</h5>
+          </div>
+
+          <ul style="font-size: 15px;">
+              <li><code>/help</code> ----- Displays help commands</li>
+              <li><code>/ping</code> ----- Tests discord response time (helps calculate more accurate !type score)</li>
+              <li><code>/roll [your question]</code> ----- Rolls a number between 11111111 and 99999999. The more
+                  duplicates the number ends with, the higher the likeliness your statement is true.
+                  <br>Example: <code>!roll Am I amazing?</code>
+                  <br>Swap Bot: <code><em>[username]> Am I amazing?</em>  ...66345888 Triples!!!</code>
+                  <br>The lowest is singles, (most common) and the highest is Octuples (least common)</li>
+              <li><code>/shouldi [something you wanna/don't wanna do]</code> ----- Randomized replies to help you decide
+                  on something if you're feeling indecisive. May or may not have programmed responses for certain keywords. :)</li>
+              <li><code>/8balls [8ball question]</code> ----- Another randomized response command, but in the 8ball format.</li>
+              <li><code>!guess:[easy | normal | hard]</code> ----- Guess a number between 15, 25, or 50 with !guess:easy,
+                 normal, easy, or hard mode. Example: <code>!guess:easy 12</code></li>
+              <li><code>/type</code> ----- Gives you a message to type as fast as you can. Fastest responses are stored,
+              and you'll be notified when you set a record.</li>
+              <li><code>/type:score</code> ----- Returns your personal record</li>
+              <li><code>/type:score:global</code> ----- Returns fastest typer so far</li>
+              <li><code>/swap [RIM_ID] [tuneFile]</code> ----- Swap rims for ones of your choice using the provided tune file.</li>
+              <li><code>/swap:help</code> ----- Displays help command for swapping rims.</li>
+              <li><code>/swap:rims</code> ----- Replies with link to RIM IDS
+                  <a href="https://github.com/Ldalvik/SwapBot/blob/main/RIM_IDS.txt">(link here)</a>
+              </li>
+              <h3>Commands coming in 0.1.0</h3>
+              <li><code>/rps [rock | paper | scissors]</code> ----- Play the bot in a game of rock, paper, scissors.</li>
+              <li><code>/fish</code> ----- Another old and simple but fun game from the Kik messenger era.
+                  Pick your permanent perks, go fishing,
+                  and sell your earnings for more perks and upgrades. The minigames will be attached to the
+                  currency system eventually.</li>
+          </ul>
+
+          <p>If you'd like to suggest a command or report a bug or issue, DM me on Discord
+              <a href="https://discordapp.com/users/Root.#6923/">here</a>
+          </p>
+          <br><br><br>
+            <div class="title">
+                <span class="credits left">Website made with <a href="https://github.com/pages-themes/midnight">Midnight Theme</a> assets.</span>
+                <span class="credits right">Bot written in Java, hosted on Heroku</span>
+            </div>
+      </section>
+    </div>
+  </body>
+</html>
