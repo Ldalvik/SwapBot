@@ -4,6 +4,10 @@
     overflow-wrap: break-word;
 }
 
+.intro {
+    color: #dcdcdc;
+}
+
 .status span {
     display: none;
 }
@@ -40,10 +44,6 @@ body {
     margin: 0 auto;
     background: #DEDEDE;
     box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 1px, rgba(0, 0, 0, 0.45) 0 3px 10px
-}
-
-.intro {
-    color: #dcdcdc;
 }
 
 header, section, footer {
