@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Swap Bot v0.0.5 - Root</title>
+    <title>Swap Bot v0.0.8 - Root</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/scale.fix.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -13,13 +13,15 @@
 <body>
 <div class="wrapper">
     <header>
-        <h1>Swap Bot (v0.0.5)</h1>
+        <h1>Swap Bot (v0.0.8)</h1>
+
         <p>Forza Horizon 5 locked tune rim swapper</p>
-        <p class="view"><a href="https://discord.gg/invites/wZGx5NuXBC">Try out the Bot</a></p>
+        <div class="status online"><span></span></div>
+        <p class="view"><a href="https://discord.gg/FhZSfTMQ4g">Try out the Bot</a></p>
         <p class="view"><a href="https://discordapp.com/users/Root.#6923/">Contact me on Discord</a></p>
         <p class="view"><a href="https://github.com/ldalvik/SwapBot/">View project on Github</a></p>
         <ul>
-            <li><a href="https://discord.gg/invites/wZGx5NuXBC">Try out the<strong>Bot</strong></a></li>
+            <li><a href="https://discord.gg/">Try out the<strong>Bot</strong></a></li>
             <li><a href="https://discordapp.com/users/Root.#6923/">Message me on<strong>Discord</strong></a></li>
             <li><a href="https://github.com/ldalvik/SwapBot/">View On <strong>GitHub</strong></a></li>
         </ul>
@@ -38,7 +40,7 @@
     </section>
     <section>
         <h3>If you play on the Xbox (Microsoft) version</h3>
-        <h5>Location: C:/Users/[USER]/AppData/Local/Packages/Microsoft.624F8B84B80_8wekyb3d8bbwe/SystemAppData/wgs/[XUID]/
+        <h5 id="break">Location: C:/Users/[USER]/AppData/Local/Packages/Microsoft.624F8B84B80_8wekyb3d8bbwe/SystemAppData/wgs/[XUID]/
         </h5>
         <p>(You may have 3+ folders (ignore the <code>t</code> folder) in your <code>wgs</code> directory if you have multiple
             accounts signed in.) If you don't know which XUID is yours, it should be the most recently modified
@@ -59,12 +61,13 @@
     </section>
     <section>
         <h2>How to find the RIM ID</h2>
-        <p>To find the RIM ID of the rim you want to apply, go to
+        <p><em>NOTE: YOU CAN NOW USE SLASH COMMANDS TO GET THE RIM IDS IN DISCORD. TYPE /RIMS IN THE GROUPCHAT OR BOT'S DMS.</em>
+            <br>To find the RIM ID of the rim you want to apply, go to
             <a href="https://github.com/Ldalvik/SwapBot/blob/main/RIM_IDS.txt">RIM IDS</a> and ctrl+f to search for
             your rim. The exact name won't be there so try searching parts of it, or just scroll through it as it's ordered
             by manufacturer.
             <br>
-            When using the <code>/swap</code> command, you only need the <code>RIM_ID</code> portion of the text. For example,
+            When using the <code>!swap</code> command, you only need the <code>RIM_ID</code> portion of the text. For example,
             the list gives me WOR_XD9 (XD9), I would only need to type <code>!swap WOR_XD9</code>
         </p>
     </section>
@@ -77,17 +80,45 @@
     </section>
     <section>
         <div class="title">
-            <h1>All commands</h1>
-            <p class="intro">All available commands, as well as future commands, WIP commands, and behind the scenes features. If you would
-                like to suggest a feature or mini-game, feel free to DM me, and I'll be glad to add it.</p>
+            <h1>General/Utility commands</h1>
+            <p class="intro">These commands are stable, and are mostly utility based.</p>
         </div>
         <ul class="commands">
             <li><code>!help</code> ----- Displays help commands</li>
+            <li><code>!website</code> ----- Link to this website</li>
+            <li><code>!uptime</code> ----- Shows how long the bot has been running. Heroku cycles every day, so it shouldn't pass 24 hours.</li>
+            <li><code>!ping</code> ----- Tests discord response time (helps calculate more accurate !type score)</li>
+        </ul>
+    </section>
+    <section>
+        <div class="title">
+            <h1>Swap Commands</h1>
+            <p class="intro">Commands related to swapping rims in tune files.</p>
+        </div>
+        <ul class="commands">
             <li><code>!help swap</code> ----- Displays help command for swapping rims.</li>
-            <li><code>!help rims</code> ----- Replies with link to RIM IDS
+            <li><code>!help rims</code> (old, see <code>/rims</code>) ----- Replies with link to RIM IDS
                 <a href="https://github.com/Ldalvik/SwapBot/blob/main/RIM_IDS.txt">(link here)</a>
             </li>
-            <li><code>!ping</code> ----- Tests discord response time (helps calculate more accurate !type score)</li>
+            <li><code>/rims</code> ----- ONLY WORKS IN THE SWAPBOT DISCORD OR BOT'S DMS. Returns a menu with lists of
+                manufacturers split into 5 menus. #-F, G-K, L-P, Q-U, V-Z</li>
+            <li><code>!swap [RIM_ID] [tuneFile]</code> ----- Swap rims for ones of your choice using the provided tune file.</li>
+        </ul>
+        <p>If you'd like to suggest a command or report a bug or issue, DM me on Discord
+            <a href="https://discordapp.com/users/Root.#6923/">here</a>
+        </p>
+    </section>
+    <section>
+        <div class="title">
+            <h1>Game commands</h1>
+            <p class="intro">Commands unrelated to the main purpose of the bot, and mostly old commands from bots during
+                the Kik messenger era.</p>
+        </div>
+        <ul class="commands">
+            <li><code>!stock</code> ----- Get the current stock price.</li>
+            <li><code>!buy [amount]</code> ----- Buy shares at the current market price.</li>
+            <li><code>!sell [amount]</code> ----- Sell shares at the current market price.</li>
+            <li><code>!portfolio</code> ----- Get your wallet (cash and shares owned)</li>
             <li><code>!roll [your question]</code> ----- Rolls a number between 11111111 and 99999999. The more
                 duplicates the number ends with, the higher the likeliness your statement is true.
                 <br>Example: <code>!roll Am I amazing?</code>
@@ -97,25 +128,11 @@
                 on something if you're feeling indecisive. May or may not have programmed responses for certain keywords. :)</li>
             <li><code>!8balls [8ball question]</code> ----- Another randomized response command, but in the 8ball format.</li>
             <li><code>!guess [easy | normal | hard]</code> ----- Guess a number between 15, 25, or 50 with !guess:easy,
-                normal, easy, or hard mode. Example: <code>!guess:easy 12</code></li>
+                normal, easy, or hard mode. Example: <code>!guess easy 12</code></li>
             <li><code>!type</code> ----- Gives you a message to type as fast as you can. Fastest responses are stored,
                 and you'll be notified when you set a record.</li>
             <li><code>!type score</code> ----- Returns your personal record</li>
-            <li><code>!type scoreglobal</code> ----- Returns fastest typer so far</li>
-            <li><code>!swap [RIM_ID] [tuneFile]</code> ----- Swap rims for ones of your choice using the provided tune file.</li>
-        </ul>
-    </section>
-    <section>
-        <div class="title">
-            <h1>Commands coming in v0.1.0</h1>
-        </div>
-        <ul class="commands">
-                <li><code>!rps [rock | paper | scissors]</code> ----- Play the bot in a game of rock, paper, scissors.</li>
-                <li><code>!fish</code> ----- Another old and simple but fun game from the Kik messenger era.
-                    Pick your permanent perks, go fishing,
-                    and sell your earnings for more perks and upgrades. The minigames will be attached to the
-                    currency system eventually.</li>
-                <li><code>!rims</code> ----- Get all RIM IDS in the discord client instead of having to open the github.</li>
+            <li><code>!type globalscore</code> ----- Returns the fastest typer so far</li>
         </ul>
         <p>If you'd like to suggest a command or report a bug or issue, DM me on Discord
             <a href="https://discordapp.com/users/Root.#6923/">here</a>
@@ -123,8 +140,7 @@
     </section>
 </div>
 <footer>
-    <p>Website updated May 16, 2022</p>
-    <p>Bot updated May 15, 2022</p>
+    <p>Website updated May 20, 2022</p>
 </footer>
 <script>fixScale(document);</script>
 </body>
