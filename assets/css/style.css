@@ -1,5 +1,24 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700");
 
+#break {
+    overflow-wrap: break-word;
+}
+
+.status span {
+    display: none;
+}
+
+.status.online:after {
+    color: lawngreen;
+    content: "BOT STATUS: ONLINE";
+    font-size: xx-small;
+}
+
+.status.offline:after {
+    color: red;
+    content: "BOT STATUS: OFFLINE";
+    font-size: xx-small;
+}
 
 html {
     background: rgba(8, 23, 59, 0.71) linear-gradient(#041736, #000000) fixed;
@@ -7,7 +26,7 @@ html {
 }
 
 body {
-    padding: 30px 0;
+    padding: 50px 0;
     margin: 0;
     font: 14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #c2c2c2;
@@ -32,7 +51,7 @@ header, section, footer {
 }
 
 a {
-    color: rgb(6, 126, 186);
+    color: #069;
     text-decoration: none
 }
 
@@ -55,23 +74,27 @@ header {
 }
 
 header h1 {
+    margin: 0;
     padding: 0;
     font-size: 24px;
     line-height: 1.2;
-    color: #19b4e3;
+    color: #1b9ec7;
     text-shadow: rgba(0, 0, 0, 0.9) 0 1px 0
+}
+
+header.without-description h1 {
+    margin: 10px 0
 }
 
 header p {
     margin: 0;
-    color: #0da6d5;
+    color: #14aad9;
     width: 300px;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: bold;
 }
 
 header p.view {
-    color: #0f88ad;
     display: none;
     font-weight: 700;
     text-shadow: rgba(0, 0, 0, 0.9) 0 1px 0;
@@ -128,24 +151,24 @@ header ul li.single {
 }
 
 header ul li + li {
-    width: 88px;
+    width: 78px;
     border-left: 1px solid #8BBEF3
 }
 
 header ul li + li + li {
     border-right: none;
-    width: 89px
+    width: 79px
 }
 
 header ul a {
     line-height: 1;
-    font-size: 12px;
+    font-size: 11px;
     color: #fff;
     color: rgba(255, 255, 255, 0.8);
     display: block;
     text-align: center;
     font-weight: 400;
-    padding-top: 5px;
+    padding-top: 6px;
     height: 40px;
     text-shadow: rgba(30, 30, 30, 0.4) 0 -1px 0
 }
@@ -166,26 +189,22 @@ section {
     border-bottom: 1px solid #424242;
 }
 
-section h1 {
-    margin-top: 10px;
-}
-
-h1, h2, h3, h4, h5 {
-    color: white;
-    margin: 0 0 15px;
-    line-height: 1.2
-}
-
-p, ul {
-    margin: 0 0 15px;
-    color: #cdc9c9;
-}
-
 
 .commands {
     font-size: 15px;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+    padding: 0;
+    margin: 0 0 15px;
+    line-height: 1.2
+}
+
+p, ul, ol, table, pre, dl {
+    margin: 0 0 20px;
+    color: #b2b2b2;
+}
 
 h1, h2, h3 {
     line-height: 1.1
@@ -199,16 +218,36 @@ h2 {
     color: #e3e3e3
 }
 
-h4, h5 {
-    color: #d8d8d8
+h3, h4, h5, h6 {
+    color: #bbbbbb
 }
 
-code {
+blockquote {
+    margin: 0 -20px 20px;
+    padding: 15px 20px 1px 40px;
+    font-style: italic;
+    background: #ccc;
+    background: rgba(0, 0, 0, 0.06);
+    color: #222
+}
+
+img {
+    max-width: 100%
+}
+
+code, pre {
     font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, serif;
     color: #ffffff;
     background: #000000;
     font-size: 93%;
     overflow-x: auto
+}
+
+pre {
+    padding: 20px;
+    background: #3A3C42;
+    color: #f8f8f2;
+    margin: 0 -20px 20px
 }
 
 pre code {
@@ -220,10 +259,55 @@ li pre {
     padding-left: 60px
 }
 
+table {
+    width: 100%;
+    border-collapse: collapse
+}
+
+th, td {
+    text-align: left;
+    padding: 5px 10px;
+    border-bottom: 1px solid #aaa
+}
+
+dt {
+    color: #222;
+    font-weight: 700
+}
+
+th {
+    color: #222
+}
+
+small {
+    font-size: 11px
+}
+
+hr {
+    border: 0;
+    background: #aaa;
+    height: 1px;
+    margin: 0 0 20px
+}
+
+kbd {
+    background-color: #fafbfc;
+    border: 1px solid #c6cbd1;
+    border-bottom-color: #959da5;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 #959da5;
+    color: #444d56;
+    display: inline-block;
+    font-size: 11px;
+    line-height: 10px;
+    padding: 3px 5px;
+    vertical-align: middle
+}
+
 footer {
     width: 640px;
     margin: 0 auto;
-    padding: 10px 0 0;
+    padding: 20px 0 0;
     color: #ccc;
     overflow: hidden
 }
