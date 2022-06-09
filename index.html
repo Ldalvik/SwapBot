@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Swap Bot v0.0.8 - Root</title>
+    <title>Swap Bot v0.1.0 - Root</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/scale.fix.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -13,25 +13,24 @@
 <body>
 <div class="wrapper">
     <header>
-        <h1>Swap Bot (v0.0.8)</h1>
+        <h1>Swap Bot (v0.1.0)</h1>
 
-        <p>Forza Horizon 5 locked tune rim swapper</p>
+        <p>Forza Horizon 5 Rim and Aero/Appearance Swapper</p>
         <div class="status online"><span></span></div>
         <p class="view"><a href="https://discord.gg/FhZSfTMQ4g">Try out the Bot</a></p>
         <p class="view"><a href="https://discordapp.com/users/Root.#6923/">Contact me on Discord</a></p>
         <p class="view"><a href="https://github.com/ldalvik/SwapBot/">View project on Github</a></p>
         <ul>
-            <li><a href="https://discord.gg/">Try out the<strong>Bot</strong></a></li>
+            <li><a href="https://discord.gg/FhZSfTMQ4g">Try out the<strong>Bot</strong></a></li>
             <li><a href="https://discordapp.com/users/Root.#6923/">Message me on<strong>Discord</strong></a></li>
             <li><a href="https://github.com/ldalvik/SwapBot/">View On <strong>GitHub</strong></a></li>
         </ul>
     </header>
     <section>
         <h1>What is SwapBot?</h1>
-        <p class="intro">Swap Bot was made for rim swapping locked tune files in Forza Horizon 5, but has a few other fun
-            commands and more being worked on daily. The tutorial below is also available with the <code>!help swap</code> command.
-            <br><br>To start replacing those dirty rims, you need to find the directory your tunes are saved in. Download your tune
-            before using the command, as it will make finding the correct file easier.</p>
+        <p class="intro">SwapBot was created to solve an issue that we've struggled with since
+            Forza Horizon 2: Ugly parts on a locked tune. Now you can change that. This bot can change rims, front/rear bumpers,
+            side-skirts, hood, rear wing, and body-kits on any tune you want. The tutorials below are also available using the bot.</p>
     </section>
     <section>
         <h2>Finding your tune file</h2>
@@ -47,7 +46,6 @@
             folder (after you download a tune). Once you are in this folder, you should see a bunch of hashed folder names
             and a container file. Open up the most recently created/modified folder in here as well. You should see a few 1kb
             files and another container file. Hover over each file, and find the one that is 378 bytes.
-            This is the file you want to attach to the <code>!swap</code> command.
         </p>
     </section>
     <section>
@@ -60,79 +58,64 @@
         </p>
     </section>
     <section>
-        <h2>How to find the RIM ID</h2>
-        <p><em>NOTE: YOU CAN NOW USE SLASH COMMANDS TO GET THE RIM IDS IN DISCORD. TYPE /RIMS IN THE GROUPCHAT OR BOT'S DMS.</em>
-            <br>To find the RIM ID of the rim you want to apply, go to
-            <a href="https://github.com/Ldalvik/SwapBot/blob/main/RIM_IDS.txt">RIM IDS</a> and ctrl+f to search for
-            your rim. The exact name won't be there so try searching parts of it, or just scroll through it as it's ordered
-            by manufacturer.
-            <br>
-            When using the <code>!swap</code> command, you only need the <code>RIM_ID</code> portion of the text. For example,
-            the list gives me WOR_XD9 (XD9), I would only need to type <code>!swap WOR_XD9</code>
+        <h2>How to swap rims</h2>
+        <p>To get the ID of the rim you want to swap, type <code>/rims</code>. Use the buttons to find your rim by letter.
+            Once you find your rim, remember the ID as you'll need it for the command. For example, to switch the rims to
+            Work XD9's, you would attach the tune file to the command <code>!rims WOR_XD9</code> and send the message.
+            The bot will reply with the tune file that you must REPLACE the old tune file with. If the name isn't the same,
+            (trailing (1) or _1) make sure to rename it.
+        </p>
+    </section>
+    <section>
+        <h2>How to swap Aero and Appearance parts</h2>
+        <p>To get the index of the part you want on the car, use the default (stock) part as 0. If there is a 3x3 grid,
+            the largest index you could put is 8. Note that the tune will say "incompatible" if you go out of bounds.
+            This also applies to swapping the body-kit. If there is only one body-kit choice, the command would be
+            <code>!bodykit 1</code>. The available aero/appearance commands are <code>!hood</code>, <code>!frontbumper</code>,
+            <code>!rearbumper</code>, <code>!skirt</code>, <code>!wing</code>, and <code>!bodykit</code>
         </p>
     </section>
     <section>
         <h2>How to send the tune file</h2>
-        <p>To send the tune file to the bot, attach it the <code>!swap [RIM_ID]</code> command you built using the
+        <p>To send the tune file to the bot, attach it the command you built using the
             above steps. After sending the message, the bot will reply with a message displaying info
-            like the car name, original rims, and new rims, and the updated tune file that you will replace the
+            like the car name, original part, new part, and the updated tune file that you will replace the
             old one with.</p>
+    </section>
+    <section>
+        <h2>Read a tune files data</h2>
+        <p>To see what rims and part indexes a tune file has, use <code>!info [tuneFile]</code>. If a part returns null, there is no customization
+        available for that category.</p>
     </section>
     <section>
         <div class="title">
             <h1>General/Utility commands</h1>
-            <p class="intro">These commands are stable, and are mostly utility based.</p>
+            <p class="intro">Commands not related to swapping</p>
         </div>
         <ul class="commands">
-            <li><code>!help</code> ----- Displays all commands.</li>
-            <li><code>!website</code> ----- Link to this website.</li>
-            <li><code>!uptime</code> ----- Shows how long the bot has been running. Heroku cycles every day, so it shouldn't pass 24 hours.</li>
-            <li><code>!ping</code> ----- Tests discord response time (helps calculate more accurate !type score).</li>
+            <li><code>/help</code> ----- Displays help command</li>
+            <li><code>/website</code> ----- Link to this website</li>
+            <li><code>/ping</code> ----- Tests message response time</li>
+            <li><code>!uptime</code> ----- Shows how long the bot has been running since last restart. Heroku cycles every day, so it shouldn't pass 24 hours.</li>
         </ul>
     </section>
     <section>
         <div class="title">
             <h1>Swap Commands</h1>
-            <p class="intro">Commands related to swapping rims in tune files.</p>
+            <p class="intro">Commands related to swapping parts in tune files.</p>
         </div>
         <ul class="commands">
-            <li><code>!help swap</code> ----- Displays help command for swapping rims.</li>
-            <li><code>!help rims</code> (old, see <code>/rims</code>) ----- Replies with link to RIM IDS
-                <a href="https://github.com/Ldalvik/SwapBot/blob/main/RIM_IDS.txt">(link here)</a>
+            <li><code>/rims</code> ----- Returns a menu with lists of manufacturers split into 5 menus. #-F, G-K, L-P, Q-U, V-Z<br>
+                List of IDS <a href="https://github.com/Ldalvik/SwapBot/blob/main/RIM_IDS.txt">HERE</a>
             </li>
-            <li><code>/rims</code> ----- ONLY WORKS IN THE SWAPBOT DISCORD OR BOT'S DMS. Returns a menu with lists of
-                manufacturers split into 5 menus. #-F, G-K, L-P, Q-U, V-Z</li>
-            <li><code>!swap [RIM_ID] [tuneFile]</code> ----- Swap rims for ones of your choice using the provided tune file.</li>
-        </ul>
-        <p>If you'd like to suggest a command or report a bug or issue, DM me on Discord
-            <a href="https://discordapp.com/users/Root.#6923/">here</a>
-        </p>
-    </section>
-    <section>
-        <div class="title">
-            <h1>Game commands</h1>
-            <p class="intro">Commands unrelated to the main purpose of the bot, and mostly old commands from bots during
-                the Kik messenger era.</p>
-        </div>
-        <ul class="commands">
-            <li><code>!stock</code> ----- Get the current stock price.</li>
-            <li><code>!buy [amount]</code> ----- Buy shares at the current market price.</li>
-            <li><code>!sell [amount]</code> ----- Sell shares at the current market price.</li>
-            <li><code>!portfolio</code> ----- Get your wallet (cash and shares owned)</li>
-            <li><code>!roll [your question]</code> ----- Rolls a number between 11111111 and 99999999. The more
-                duplicates the number ends with, the higher the likeliness your statement is true.
-                <br>Example: <code>!roll Am I amazing?</code>
-                <br>Swap Bot: <code><em>[username]> Am I amazing?</em>  ...66345888 Triples!!!</code>
-                <br>The lowest is singles, (most common) and the highest is Octuples (least common)</li>
-            <li><code>!shouldi [something you wanna/don't wanna do]</code> ----- Randomized replies to help you decide
-                on something if you're feeling indecisive. May or may not have programmed responses for certain keywords. :)</li>
-            <li><code>!8balls [8ball question]</code> ----- Another randomized response command, but in the 8ball format.</li>
-            <li><code>!guess [easy | normal | hard]</code> ----- Guess a number between 15, 25, or 50 with !guess:easy,
-                normal, easy, or hard mode. Example: <code>!guess easy 12</code></li>
-            <li><code>!type</code> ----- Gives you a message to type as fast as you can. Fastest responses are stored,
-                and you'll be notified when you set a record.</li>
-            <li><code>!type score</code> ----- Returns your personal record.</li>
-            <li><code>!type globalscore</code> ----- Returns the fastest typer so far.</li>
+            <li><code>!info [tuneFile]</code> ----- Get info on a tune.</li>
+            <li><code>!hood [partIndex] [tuneFile]</code> ----- Swap the hood on a tune.</li>
+            <li><code>!frontbumper [partIndex] [tuneFile]</code> ----- Swap the front bumper on a tune.</li>
+            <li><code>!rearbumper [partIndex] [tuneFile]</code> ----- Swap the rear bumper on a tune.</li>
+            <li><code>!skirt [partIndex] [tuneFile]</code> ----- Swap the side-skirts on a tune.</li>
+            <li><code>!wing [partIndex] [tuneFile]</code> ----- Swap the rear wing on a tune.</li>
+            <li><code>!rims [partIndex] [tuneFile]</code> ----- Swap the rims on a tune.</li>
+            <li><code>!bodykit [partIndex] [tuneFile]</code> ----- Swap the body-kit on a tune.</li>
         </ul>
         <p>If you'd like to suggest a command or report a bug or issue, DM me on Discord
             <a href="https://discordapp.com/users/Root.#6923/">here</a>
@@ -140,7 +123,7 @@
     </section>
 </div>
 <footer>
-    <p>Website updated May 20, 2022</p>
+    <p>Website updated June 9, 2022</p>
 </footer>
 <script>fixScale(document);</script>
 </body>
