@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Swap Bot v0.1.0 - Root</title>
+    <title>Swap Bot v0.1.0</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/scale.fix.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -13,19 +13,25 @@
 <body>
 <div class="wrapper">
     <header>
-        <h1>Swap Bot (v0.1.0)</h1>
+        <h1>Swap Bot (v0.1.0) [Web version available]</h1>
 
         <p>Forza Horizon 5 Rim and Aero/Appearance Swapper</p>
         <div class="status online"><span></span></div>
         <p class="view"><a href="https://discord.gg/FhZSfTMQ4g">Try out the Bot</a></p>
         <p class="view"><a href="https://discordapp.com/users/Root.#6923/">Contact me on Discord</a></p>
         <p class="view"><a href="https://github.com/ldalvik/SwapBot/">View project on Github</a></p>
+        <p class="view"><a href="https://forza-tune-editor.herokuapp.com">Web version</a></p>
         <ul>
             <li><a href="https://discord.gg/FhZSfTMQ4g">Try out the<strong>Bot</strong></a></li>
             <li><a href="https://discordapp.com/users/Root.#6923/">Message me on<strong>Discord</strong></a></li>
             <li><a href="https://github.com/ldalvik/SwapBot/">View On <strong>GitHub</strong></a></li>
+            <li><a href="https://forza-tune-editor.herokuapp.com">Try the <strong>Web Version</strong></a></li>
         </ul>
     </header>
+      <section>
+        <p style="color: red;">READ ME! This bot will slowly become obsolete as I continue to update the (way better) website version of it, found here: <a href="https://forza-tune-editor.herokuapp.com">Forza Tune View/Editor</a>.
+          The bot will remain online for it's few tutorial commands and games, but <code>!swap</code> commands will disabled. </p>
+    </section>
     <section>
         <h1>What is SwapBot?</h1>
         <p class="intro">SwapBot was created to solve an issue that we've struggled with since
@@ -43,9 +49,10 @@
         </h5>
         <p>(You may have 3+ folders (ignore the <code>t</code> folder) in your <code>wgs</code> directory if you have multiple
             accounts signed in.) If you don't know which XUID is yours, it should be the most recently modified
-            folder (after you download a tune). Once you are in this folder, you should see a bunch of hashed folder names
-            and a container file. Open up the most recently created/modified folder in here as well. You should see a few 1kb
-            files and another container file. Hover over each file, and find the one that is 378 bytes.
+            folder (after you download a tune). Once you're sure you have the right directory, look for a folder that was created 
+            at the time you downloaded the tune. If you filter by date modified, you may end up in the savegame folder accidentally.
+            To narrow it down, tune folders will ONLY have 2 1kb files and a container file. To get the tune file itself, hover over 
+            each file and find the one that is 378 bytes.
         </p>
     </section>
     <section>
@@ -124,7 +131,7 @@
     </section>
 </div>
 <footer>
-    <p>Website updated July 25, 2022</p>
+    <p>Website updated July 29, 2022 - Made with love by Root :)</p>
 </footer>
 <script>fixScale(document);</script>
 </body>
